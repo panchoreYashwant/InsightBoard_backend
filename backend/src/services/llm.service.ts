@@ -218,10 +218,11 @@ Rules:
       console.error("Gemini API error:", error);
       // Surface original error for easier diagnosis while preserving throwing behavior
       const message = error instanceof Error ? error.message : String(error);
-      throw new Error(`Failed to generate tasks from LLM. ${message}`);
+      throw new Error(`Failed to generate tasks from LLM. ${message}, ${process.env.GENERATIVE_MODEL}, ${process.env.GEMINI_MODEL}`);
     }
   }
 }
+
 
 
 

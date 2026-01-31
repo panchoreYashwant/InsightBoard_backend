@@ -50,7 +50,7 @@ export class LLMService {
    * IMPORTANT: Output is UNTRUSTED and must be validated
    */
   async generateTasks(transcript: string): Promise<LLMTaskOutput[]> {
-        const model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = this.genAI.getGenerativeModel({ model:  process.env.GENERATIVE_MODEL || process.env.GEMINI_MODEL || "gemini-pro" });
 
     const systemPrompt = `You are an expert project manager AI. Analyze the given meeting transcript and extract a structured list of actionable tasks.
 
@@ -221,3 +221,4 @@ Rules:
     }
   }
 }
+

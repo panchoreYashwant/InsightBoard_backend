@@ -41,7 +41,7 @@ export function createRouter(
 
 
 
-  router.get("/submit", async (req: SubmitRequest, res: Response) => {
+  router.get("/test", async (req: SubmitRequest, res: Response) => {
     res.status(200).json({ message: "API is working" });
   });
   router.post("/submit", async (req: SubmitRequest, res: Response) => {
@@ -195,4 +195,5 @@ export function createRouter(
 
   return router;
 }
+
 

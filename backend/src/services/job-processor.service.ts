@@ -23,7 +23,7 @@ export class JobProcessorService {
   async processTranscript(jobId: string, transcript: string): Promise<void> {
     try {
       console.log(`[Job ${jobId}] Starting processing...`);
-
+ console.log("111111111111111111",process.env.GENERATIVE_MODEL , process.env.GEMINI_MODEL)
       // Step 1: Call LLM to generate tasks
       console.log(`[Job ${jobId}] Calling LLM...`);
       const llmOutput = await this.llmService.generateTasks(transcript);
@@ -88,3 +88,4 @@ export class JobProcessorService {
     }
   }
 }
+
